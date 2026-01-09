@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://df05v6bhsxto6"]
+
+[ext_resource type="PackedScene" uid="uid://d0l7eda5qalsk" path="res://Scenes/BaseItem.tscn" id="1_0njmc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 1152.0
+offset_bottom = 648.0
+current_tab = 0
+
+[node name="Panel" type="Panel" parent="TabContainer"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Panel"]
+custom_minimum_size = Vector2(560, 160)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -160.0
+offset_right = 576.0
+grow_vertical = 0
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Panel/ScrollContainer"]
+custom_minimum_size = Vector2(560, 1280)
+layout_mode = 2
+columns = 14
+
+[node name="Control5" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control2" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control3" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control4" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control6" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control7" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control8" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control9" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control10" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control11" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control12" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
+
+[node name="Control13" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
+layout_mode = 2
