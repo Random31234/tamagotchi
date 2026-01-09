@@ -5,6 +5,7 @@ class_name draggable
 #test
 #test
 #testdaaassdasdasd
+#test
 @export var sprite:Sprite2D
 
 var dragging:bool
