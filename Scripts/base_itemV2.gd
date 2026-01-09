@@ -5,7 +5,6 @@ extends Control
 
 class_name draggable
 
-signal drag
 @export var sprite:Sprite2D
 
 var dragging:bool
@@ -27,11 +26,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if dragging  == true:
 		f.global_position = get_global_mouse_position()
+		get_world_2d().direct_space_state
 	
 	if dragging == false:
 		
 		if f != null:
 			f.free()
+			print("fffff")
 
 
 func _input(event: InputEvent) -> void:
