@@ -1,15 +1,14 @@
-@tool
 extends Control
 
 
 
-class_name draggable
+class_name Draggable
 
 @export var sprite:Sprite2D
 var apply_once:bool
 var dragging:bool
 
-@export var spritem:PackedFloat32Array
+@export var spritem:PackedFloat32Array = [0,0,1,0.5,0]
 
 var f:Sprite2D
 func _ready() -> void:
@@ -17,7 +16,7 @@ func _ready() -> void:
 	
 	if sprite.region_enabled == true:
 		self.size =sprite.region_rect.size*1.25
-		sprite.position = sprite.region_rect.size/2
+		sprite.offset = sprite.region_rect.size/2
 		
 	
 	if sprite.region_enabled == false:
@@ -25,10 +24,10 @@ func _ready() -> void:
 		sprite.offset = sprite.get_rect().size/2
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dragging  == true:
 		f.global_position = get_global_mouse_position()
-		
+		f.global_position = f.global_position -sprite.get_rect().size/2
 		
 		var w = get_world_2d().direct_space_state
 		var g = get_global_mouse_position()
@@ -57,13 +56,13 @@ func spritemodifier():
 
 func updateSprite(s:Sprite2D):
 	if f != null:
-		f.sprite = s
+		f = s
 
-func triggerHover(c:catcher):
+func triggerHover(c:Catcher):
 	c.hoverEffect(self)
 	
 
-func triggerDrag(c:catcher):
+func triggerDrag(c:Catcher):
 	c.draggedEffect(self)
 
 func _input(event: InputEvent) -> void:
@@ -99,7 +98,7 @@ func _input(event: InputEvent) -> void:
 		
 		if w.intersect_point(z).size()>0:
 			for b in w.intersect_point(z):
-				if b.collider is catcher:
+				if b.collider is Catcher:
 					triggerDrag(b.collider)
 					
 		dragging = false

@@ -1,16 +1,16 @@
 extends Area2D
 
-class_name catcher
+class_name Catcher
 
-func hoverEffect(o:draggable):
+func hoverEffect(o:Draggable):
 	print("hovered!")
 	print("object is" + o.name)
 
 
-func draggedEffect(o:draggable):
+func draggedEffect(o:Draggable):
 	deleteDraggable(o)
 	print("d")
 
-func deleteDraggable(o:draggable):
+func deleteDraggable(o:Draggable):
 	o.dragging = false
 	o.queue_free()
