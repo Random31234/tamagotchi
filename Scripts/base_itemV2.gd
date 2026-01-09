@@ -34,7 +34,8 @@ func _process(delta: float) -> void:
 		z.collide_with_areas = true
 		z.position = f
 		print(z.collide_with_areas)
-		print(w.intersect_point(z))
+		if w.intersect_point(z).size()>0:
+			print(w.intersect_point(z)[0].collider.get_child_count())
 		#system in place for detecting the area 2d, now a function is needed to then determine what exactly we are "detecting"
 		
 	

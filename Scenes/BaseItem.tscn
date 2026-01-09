@@ -9,8 +9,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1112.0
-offset_bottom = -608.0
+offset_right = -992.0
+offset_bottom = -488.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_li1gt")
@@ -18,4 +18,5 @@ sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dy66x")
+offset = Vector2(64, 64)
 region_rect = Rect2(0, 0, 32, 32)
