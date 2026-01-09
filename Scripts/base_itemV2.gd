@@ -1,11 +1,11 @@
+@tool
 extends Control
+
+
 
 class_name draggable
 
-#test
-#test
-#testdaaassdasdasd
-#test
+signal drag
 @export var sprite:Sprite2D
 
 var dragging:bool
