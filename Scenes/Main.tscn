@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://df05v6bhsxto6"]
+[gd_scene load_steps=3 format=3 uid="uid://df05v6bhsxto6"]
 
 [ext_resource type="PackedScene" uid="uid://d0l7eda5qalsk" path="res://Scenes/BaseItem.tscn" id="1_0njmc"]
+[ext_resource type="PackedScene" uid="uid://bd50v8wjiekqb" path="res://Scenes/CatcherBase.tscn" id="2_n4lcr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -76,3 +77,5 @@ layout_mode = 2
 
 [node name="Control13" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
 layout_mode = 2
+
+[node name="Area2D" parent="." instance=ExtResource("2_n4lcr")]

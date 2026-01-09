@@ -35,7 +35,9 @@ func _process(delta: float) -> void:
 		z.position = f
 		print(z.collide_with_areas)
 		if w.intersect_point(z).size()>0:
-			print(w.intersect_point(z)[0].collider.get_child_count())
+			for b in w.intersect_point(z):
+				if b.collider is catcher:
+					triggerHover(b.collider) 
 		#system in place for detecting the area 2d, now a function is needed to then determine what exactly we are "detecting"
 		
 	
@@ -45,6 +47,13 @@ func _process(delta: float) -> void:
 			f.free()
 			print("fffff")
 
+
+func triggerHover(c:catcher):
+	c.hoverEffect(self)
+	
+
+func triggerDrag(c:catcher):
+	pass
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Lc"):
