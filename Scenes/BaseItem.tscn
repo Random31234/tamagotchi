@@ -15,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_li1gt")
 sprite = NodePath("Sprite2D")
+spritem = PackedFloat32Array(0, 0, 1, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dy66x")

@@ -9,6 +9,8 @@ class_name draggable
 var apply_once:bool
 var dragging:bool
 
+@export var spritem:PackedFloat32Array
+
 var f:Sprite2D
 func _ready() -> void:
 	
@@ -42,6 +44,20 @@ func _process(delta: float) -> void:
 		
 	
 
+func spritemodifier():
+	if f !=null:
+		#defaults to hsv
+		var c:Color
+		c = Color.from_hsv(spritem[0],spritem[1],spritem[2],spritem[3])
+		#function to go by rbg instead.
+		if spritem[4] >0:
+			c = Color(spritem[0],spritem[1],spritem[2],spritem[3])
+		
+		f.modulate= c
+
+func updateSprite(s:Sprite2D):
+	if f != null:
+		f.sprite = s
 
 func triggerHover(c:catcher):
 	c.hoverEffect(self)
@@ -68,6 +84,7 @@ func _input(event: InputEvent) -> void:
 			dragging = true
 			f =sprite.duplicate()
 			get_tree().root.add_child(f)
+			spritemodifier()
 			
 	if event.is_action_released("Lc"):
 		print("r")
