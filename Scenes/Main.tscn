@@ -42,40 +42,4 @@ columns = 14
 [node name="Control5" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
 layout_mode = 2
 
-[node name="Control" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control2" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control3" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control4" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control6" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control7" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control8" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control9" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control10" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control11" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control12" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
-[node name="Control13" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
-layout_mode = 2
-
 [node name="Area2D" parent="." instance=ExtResource("2_n4lcr")]

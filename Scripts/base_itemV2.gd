@@ -6,7 +6,7 @@ extends Control
 class_name draggable
 
 @export var sprite:Sprite2D
-
+var apply_once:bool
 var dragging:bool
 
 var f:Sprite2D
@@ -29,10 +29,10 @@ func _process(delta: float) -> void:
 		
 		
 		var w = get_world_2d().direct_space_state
-		var f = get_global_mouse_position()
+		var g = get_global_mouse_position()
 		var z = PhysicsPointQueryParameters2D.new()
 		z.collide_with_areas = true
-		z.position = f
+		z.position = g
 		print(z.collide_with_areas)
 		if w.intersect_point(z).size()>0:
 			for b in w.intersect_point(z):
@@ -41,11 +41,6 @@ func _process(delta: float) -> void:
 		#system in place for detecting the area 2d, now a function is needed to then determine what exactly we are "detecting"
 		
 	
-	if dragging == false:
-		
-		if f != null:
-			f.free()
-			print("fffff")
 
 
 func triggerHover(c:catcher):
@@ -53,7 +48,7 @@ func triggerHover(c:catcher):
 	
 
 func triggerDrag(c:catcher):
-	pass
+	c.draggedEffect(self)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Lc"):
@@ -76,4 +71,18 @@ func _input(event: InputEvent) -> void:
 			
 	if event.is_action_released("Lc"):
 		print("r")
+		var w = get_world_2d().direct_space_state
+		var g = get_global_mouse_position()
+		var z = PhysicsPointQueryParameters2D.new()
+		z.collide_with_areas = true
+		z.position = g
+		print(z.collide_with_areas)
+		if f != null:
+			f.free()
+		
+		if w.intersect_point(z).size()>0:
+			for b in w.intersect_point(z):
+				if b.collider is catcher:
+					triggerDrag(b.collider)
+					
 		dragging = false

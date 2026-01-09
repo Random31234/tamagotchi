@@ -8,4 +8,9 @@ func hoverEffect(o:draggable):
 
 
 func draggedEffect(o:draggable):
-	pass
+	deleteDraggable(o)
+	print("d")
+
+func deleteDraggable(o:draggable):
+	o.dragging = false
+	o.queue_free()
