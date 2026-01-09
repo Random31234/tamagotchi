@@ -26,7 +26,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if dragging  == true:
 		f.global_position = get_global_mouse_position()
-		get_world_2d().direct_space_state
+		
+		
+		var w = get_world_2d().direct_space_state
+		var f = get_global_mouse_position()
+		var z = PhysicsPointQueryParameters2D.new()
+		z.collide_with_areas = true
+		z.position = f
+		print(z.collide_with_areas)
+		print(w.intersect_point(z))
+		#system in place for detecting the area 2d, now a function is needed to then determine what exactly we are "detecting"
+		
 	
 	if dragging == false:
 		

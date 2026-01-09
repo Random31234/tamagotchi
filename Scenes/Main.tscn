@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://df05v6bhsxto6"]
+[gd_scene load_steps=3 format=3 uid="uid://df05v6bhsxto6"]
 
 [ext_resource type="PackedScene" uid="uid://d0l7eda5qalsk" path="res://Scenes/BaseItem.tscn" id="1_0njmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aycqx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -76,3 +78,10 @@ layout_mode = 2
 
 [node name="Control13" parent="TabContainer/Panel/ScrollContainer/GridContainer" instance=ExtResource("1_0njmc")]
 layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+shape = SubResource("RectangleShape2D_aycqx")
