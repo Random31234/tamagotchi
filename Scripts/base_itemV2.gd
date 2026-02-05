@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 		print(z.collide_with_areas)
 		if w.intersect_point(z).size()>0:
 			for b in w.intersect_point(z):
-				if b.collider is catcher:
+				if b.collider is Catcher:
 					triggerHover(b.collider) 
 		#system in place for detecting the area 2d, now a function is needed to then determine what exactly we are "detecting"
 		

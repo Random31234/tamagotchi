@@ -3,13 +3,11 @@ extends Area2D
 class_name Catcher
 
 func hoverEffect(o:Draggable):
-	print("hovered!")
-	print("object is" + o.name)
+	pass
 
 
 func draggedEffect(o:Draggable):
-	deleteDraggable(o)
-	print("d")
+	pass
 
 func deleteDraggable(o:Draggable):
 	o.dragging = false
