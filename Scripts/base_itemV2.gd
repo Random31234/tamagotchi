@@ -23,7 +23,7 @@ func _ready() -> void:
 		self.size = sprite.get_rect().size *1.25
 		sprite.offset = sprite.get_rect().size/2
 	
-
+#function for draggable thing
 func _process(_delta: float) -> void:
 	if dragging  == true:
 		f.global_position = get_global_mouse_position()
@@ -35,6 +35,7 @@ func _process(_delta: float) -> void:
 		z.collide_with_areas = true
 		z.position = g
 		print(z.collide_with_areas)
+		#Triggers hover effect
 		if w.intersect_point(z).size()>0:
 			for b in w.intersect_point(z):
 				if b.collider is Catcher:
@@ -57,11 +58,11 @@ func spritemodifier():
 func updateSprite(s:Sprite2D):
 	if f != null:
 		f = s
-
+#triggers a hover effect on catcher
 func triggerHover(c:Catcher):
 	c.hoverEffect(self)
 	
-
+#triggers a drag effect on catcher
 func triggerDrag(c:Catcher):
 	c.draggedEffect(self)
 
@@ -95,7 +96,7 @@ func _input(event: InputEvent) -> void:
 		print(z.collide_with_areas)
 		if f != null:
 			f.free()
-		
+		#condition for trigger dropped upon effect
 		if w.intersect_point(z).size()>0:
 			for b in w.intersect_point(z):
 				if b.collider is Catcher:
